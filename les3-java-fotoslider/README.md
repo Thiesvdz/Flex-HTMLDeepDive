@@ -1,0 +1,1 @@
+Live link naar de opdracht (nog niet af): http://32048@32048.hosts1.ma-cloud.nl/Flex-HTMLdeepDive/les3-java-fotoslider/Fotoslider-java.html
