@@ -5,14 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fotoslider</title>
     <link rel="stylesheet" type="text/css" href="css/Style.css">
+    <script>
+        let fotonummer, fotobreedte, aantalfotos, fotoslider;
+        function setupFotoslider() 
+        {
+            fotonummer = 0; 
+            fotobreedte = 400;
+            fotoslider = Fotoslider;
+            let volgendeKnop = volgende;
+            let vorigeKnop = vorige;
+            aantalfotos = fotoslider.children.length;
+
+            function volgendeFoto() 
+            {
+                fotonummer += 1;
+                if (fotonummer === aantalfotos){fotonummer = 0;}
+                let afstandNaarLinks = -1 * (fotonummer * fotobreedte)
+                fotoslider.style.left = afstandNaarLinks + "px";
+
+            } 
+            function vorigeFoto() 
+            {
+                fotonummer -= 1;
+                if (fotonummer === aantalfotos){fotonummer = 0;}
+                let afstandNaarRechts = +1 * (fotonummer * fotobreedte)
+                fotoslider.style.right = afstandNaarRechts + "px";
+
+            }
+
+
+        //  alert("Ja, het script werkt!");
+        volgendeKnop.addEventListener('click', volgendeFoto);
+        vorigeKnop.addEventListener('click', vorigeFoto);
+        }
+
+    window.addEventListener('DOMContentLoaded', setupFotoslider);
+    
+    // alert('test')
+    
+    </script>
 </head>
 <body>
-<div id="Fotoslider">
-    <div class="foto"><img src="Foto's/monke1.jpg" title="Gorilla" /></div>
-    <div class="foto"><img src="Foto's/monke2.png" title="Pov Monke" /></div>
-    <div class="foto"><img src="Foto's/monke3.jpg"title="Monke" /></div>
-    <div class="foto"><img src="Foto's/monke4.jpg" title="Fat Monke" /></div>
-    <div class="foto"><img src="Foto's/monke5.jpg"title="Le Monke" /></div>
+<div id="viewport">
+    <div id="Fotoslider">
+        <div class="foto"><img src="Foto's/monke1.jpg" title="Gorilla" /></div>
+        <div class="foto"><img src="Foto's/monke2.png" title="Pov Monke" /></div>
+        <div class="foto"><img src="Foto's/monke3.jpg" title="Monke" /></div>
+        <div class="foto"><img src="Foto's/monke4.jpg" title="Fat Monke" /></div>
+        <div class="foto"><img src="Foto's/monke5.jpg" title="Le Monke" /></div>   
+    </div>
 </div>
+
+<div id="controls">
+    <button id="vorige">Vorige</button>
+    <button id="volgende">Volgende</button>
+</div>
+
 </body>
-</html>
+</html> 
