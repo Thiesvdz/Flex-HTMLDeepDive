@@ -44,9 +44,8 @@ body{
 }
 
 button{
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50; 
   border: 10px black rgb(0, 0, 0);
-  color: white;
   padding: 16px 32px;
   text-align: center;
   text-decoration: none;
@@ -63,7 +62,7 @@ button:hover {
     background-color: #000000;
     color: rgb(255, 255, 255);
     opacity: 1;
-    /* border: white 5px; */
+    
   }
 
 button:active {
